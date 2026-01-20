@@ -1,0 +1,1363 @@
+/* StudentFeeReport.css - Professional University Style */
+.student-fee-report {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: #f8f9fa;
+  min-height: 100vh;
+  color: #000000;
+}
+
+/* University Branding */
+.university-header {
+  text-align: center;
+  margin-bottom: 40px;
+  padding: 30px 0;
+  border-bottom: 3px solid #000000;
+}
+
+.university-name {
+  color: #000000;
+  margin: 0;
+  font-size: 2.8rem;
+  font-weight: 900;
+  letter-spacing: -0.5px;
+  text-transform: uppercase;
+}
+
+.university-subtitle {
+  color: #333333;
+  margin: 10px 0 0 0;
+  font-size: 1.2rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+/* Print Mode */
+.print-mode {
+  background: white;
+  padding: 0;
+}
+
+.print-mode .report-actions {
+  display: none;
+}
+
+.print-mode .fee-clearance-report {
+  box-shadow: none;
+  margin: 0;
+  padding: 20px;
+}
+
+/* Report Actions */
+.report-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.action-buttons {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.back-btn {
+  background: #000000;
+  color: white;
+  border: 2px solid #000000;
+  padding: 12px 24px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+}
+
+.back-btn:hover {
+  background: #333333;
+  border-color: #333333;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.print-btn,
+.download-btn,
+.refresh-btn {
+  background: #2c3e50;
+  color: white;
+  border: 2px solid #2c3e50;
+  padding: 12px 24px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+}
+
+.print-btn:hover,
+.download-btn:hover,
+.refresh-btn:hover {
+  background: #1a252f;
+  border-color: #1a252f;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Student List View */
+.report-header {
+  text-align: center;
+  margin-bottom: 40px;
+  padding: 30px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.report-header h2 {
+  color: #000000;
+  margin: 0 0 15px 0;
+  font-size: 2.2rem;
+  font-weight: 800;
+  position: relative;
+  padding-bottom: 15px;
+}
+
+.report-header h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 4px;
+  background: #000000;
+  border-radius: 2px;
+}
+
+.report-header p {
+  color: #333333;
+  font-size: 1.1rem;
+  margin: 0;
+  font-weight: 500;
+}
+
+.search-section {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  margin-bottom: 30px;
+}
+
+.search-input-group {
+  position: relative;
+  max-width: 600px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.search-input {
+  width: 100%;
+  padding: 16px 24px;
+  border: 2px solid #d1d5db;
+  border-radius: 10px;
+  font-size: 1rem;
+  background: white;
+  transition: all 0.2s ease;
+  outline: none;
+  box-sizing: border-box;
+  color: #000000;
+}
+
+.search-input:focus {
+  border-color: #000000;
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1);
+}
+
+.search-input::placeholder {
+  color: #6b7280;
+}
+
+.search-icon {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #000000;
+  font-size: 1.2rem;
+  pointer-events: none;
+}
+
+.students-list h3 {
+  color: #000000;
+  margin-bottom: 25px;
+  font-size: 1.4rem;
+  font-weight: 700;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #e5e7eb;
+}
+
+.students-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(320px, 100%), 1fr));
+  gap: 20px;
+}
+
+.student-card {
+  background: white;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 24px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  min-height: 120px;
+}
+
+.student-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  border-color: #000000;
+}
+
+.student-avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #000000;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.4rem;
+  flex-shrink: 0;
+  border: 2px solid #000000;
+}
+
+.student-details {
+  flex: 1;
+  min-width: 0;
+}
+
+.student-details h4 {
+  margin: 0 0 8px 0;
+  color: #000000;
+  font-size: 1.1rem;
+  font-weight: 700;
+  word-wrap: break-word;
+}
+
+.student-details p {
+  margin: 4px 0;
+  color: #333333;
+  font-size: 0.95rem;
+  word-wrap: break-word;
+  font-weight: 500;
+}
+
+.view-report-btn {
+  color: #000000;
+  font-weight: 700;
+  font-size: 0.95rem;
+  opacity: 0.9;
+  transition: opacity 0.2s ease;
+  white-space: nowrap;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.student-card:hover .view-report-btn {
+  opacity: 1;
+}
+
+.no-results {
+  text-align: center;
+  padding: 60px 40px;
+  color: #333333;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  grid-column: 1 / -1;
+  border: 2px dashed #d1d5db;
+}
+
+.no-results p {
+  font-size: 1.1rem;
+  margin: 0;
+  font-weight: 500;
+}
+
+/* Fee Clearance Report */
+.fee-clearance-report {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  margin-bottom: 40px;
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid #e5e7eb;
+}
+
+/* Report Header for Print */
+.report-header-print {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 40px;
+  padding-bottom: 30px;
+  border-bottom: 4px solid #000000;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.college-info {
+  flex: 1;
+  min-width: 300px;
+}
+
+.college-info h1 {
+  color: #000000;
+  margin: 0 0 15px 0;
+  font-size: 2.4rem;
+  font-weight: 900;
+  letter-spacing: -0.5px;
+}
+
+.college-name {
+  font-size: 1.4rem;
+  color: #333333;
+  margin: 0 0 10px 0;
+  font-weight: 700;
+}
+
+.report-date {
+  color: #333333;
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.report-meta {
+  text-align: right;
+  flex-shrink: 0;
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 10px;
+  border: 2px solid #e5e7eb;
+}
+
+.meta-item {
+  margin-bottom: 12px;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.meta-item span {
+  color: #333333;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.meta-item strong {
+  color: #000000;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+/* Student Information Section */
+.student-info-section {
+  margin-bottom: 40px;
+}
+
+.student-info-section h2 {
+  color: #000000;
+  margin-bottom: 25px;
+  font-size: 1.6rem;
+  font-weight: 800;
+  padding-bottom: 15px;
+  border-bottom: 3px solid #000000;
+  position: relative;
+}
+
+.student-info-section h2::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 100px;
+  height: 3px;
+  background: #000000;
+}
+
+.info-grid-print {
+  display: grid;
+  gap: 20px;
+}
+
+.info-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+.info-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.info-col.full-width {
+  grid-column: 1 / -1;
+}
+
+.info-col label {
+  font-weight: 700;
+  color: #333333;
+  margin-bottom: 8px;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.info-col span {
+  color: #000000;
+  font-size: 1.1rem;
+  font-weight: 600;
+  word-break: break-word;
+  padding: 10px 0;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.note-text {
+  color: #dc2626 !important;
+  font-style: italic;
+  font-weight: 500;
+}
+
+/* Fee Summary Section */
+.fee-summary-section {
+  margin-bottom: 40px;
+}
+
+.fee-summary-section h2 {
+  color: #000000;
+  margin-bottom: 25px;
+  font-size: 1.6rem;
+  font-weight: 800;
+  padding-bottom: 15px;
+  border-bottom: 3px solid #000000;
+  position: relative;
+}
+
+.fee-summary-section h2::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 100px;
+  height: 3px;
+  background: #000000;
+}
+
+.summary-cards-print {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 25px;
+  margin-bottom: 30px;
+}
+
+.summary-card-print {
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
+  color: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  min-height: 140px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 2px solid transparent;
+  transition: transform 0.2s ease;
+}
+
+.summary-card-print:hover {
+  transform: translateY(-2px);
+}
+
+.summary-card-print.total {
+  background: #000000;
+  border-color: #000000;
+}
+
+.summary-card-print.paid {
+  background: #16a34a;
+  border-color: #16a34a;
+}
+
+.summary-card-print.due {
+  background: #dc2626;
+  border-color: #dc2626;
+}
+
+.summary-card-print h3 {
+  margin: 0 0 15px 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  opacity: 0.9;
+}
+
+.summary-card-print p {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 900;
+  letter-spacing: -0.5px;
+}
+
+/* Fee Breakdown Section */
+.fee-breakdown-section {
+  margin-bottom: 40px;
+}
+
+.fee-breakdown-section h2 {
+  color: #000000;
+  margin-bottom: 25px;
+  font-size: 1.6rem;
+  font-weight: 800;
+  padding-bottom: 15px;
+  border-bottom: 3px solid #000000;
+  position: relative;
+}
+
+.fee-breakdown-section h2::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 100px;
+  height: 3px;
+  background: #000000;
+}
+
+.breakdown-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+  border: 2px solid #000000;
+  border-radius: 8px;
+  overflow: hidden;
+  table-layout: fixed;
+}
+
+.breakdown-table th,
+.breakdown-table td {
+  padding: 16px 20px;
+  text-align: left;
+  border-bottom: 1px solid #e5e7eb;
+  word-wrap: break-word;
+  color: #000000;
+}
+
+.breakdown-table th {
+  background: #000000;
+  color: white;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.breakdown-table tr:nth-child(even) {
+  background: #f8f9fa;
+}
+
+.breakdown-table .total-row {
+  background: #000000 !important;
+  color: white;
+  font-weight: 900;
+  border-top: 2px solid #000000;
+}
+
+.breakdown-table .total-row td {
+  color: white;
+}
+
+.breakdown-table .total-amount {
+  font-size: 1.2rem;
+  font-weight: 900;
+}
+
+.amount {
+  font-weight: 700;
+  text-align: right;
+  font-family: 'Courier New', monospace;
+}
+
+.amount.paid {
+  color: #16a34a;
+}
+
+.amount.negative {
+  color: #dc2626;
+}
+
+.amount.positive {
+  color: #16a34a;
+}
+
+/* Challan Details Section */
+.challan-details-section {
+  margin-bottom: 40px;
+}
+
+.challan-details-section h2 {
+  color: #000000;
+  margin-bottom: 25px;
+  font-size: 1.6rem;
+  font-weight: 800;
+  padding-bottom: 15px;
+  border-bottom: 3px solid #000000;
+  position: relative;
+}
+
+.challan-details-section h2::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 100px;
+  height: 3px;
+  background: #000000;
+}
+
+.challan-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+  border: 2px solid #000000;
+  border-radius: 8px;
+  overflow: hidden;
+  table-layout: fixed;
+}
+
+.challan-table th,
+.challan-table td {
+  padding: 14px 16px;
+  text-align: left;
+  border-bottom: 1px solid #e5e7eb;
+  word-wrap: break-word;
+  color: #000000;
+}
+
+.challan-table th {
+  background: #000000;
+  color: white;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: 0.85rem;
+}
+
+.challan-table tr:nth-child(even) {
+  background: #f8f9fa;
+}
+
+.challan-table tbody tr:hover {
+  background: #f1f5f9;
+}
+
+.challan-number {
+  font-weight: 700;
+  color: #000000;
+  font-family: 'Courier New', monospace;
+}
+
+.status-badge {
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+
+.status-badge.paid {
+  background: #d1fae5;
+  color: #065f46;
+  border: 1px solid #10b981;
+}
+
+.status-badge.partial {
+  background: #fef3c7;
+  color: #92400e;
+  border: 1px solid #f59e0b;
+}
+
+.status-badge.unpaid {
+  background: #fee2e2;
+  color: #991b1b;
+  border: 1px solid #ef4444;
+}
+
+.status-badge.pending {
+  background: #fef3c7;
+  color: #92400e;
+  border: 1px solid #f59e0b;
+}
+
+/* Payment History Section */
+.payment-history-section {
+  margin-bottom: 40px;
+}
+
+.payment-history-section h2 {
+  color: #000000;
+  margin-bottom: 25px;
+  font-size: 1.6rem;
+  font-weight: 800;
+  padding-bottom: 15px;
+  border-bottom: 3px solid #000000;
+  position: relative;
+}
+
+.payment-history-section h2::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 100px;
+  height: 3px;
+  background: #000000;
+}
+
+.payment-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+  border: 2px solid #000000;
+  border-radius: 8px;
+  overflow: hidden;
+  table-layout: fixed;
+}
+
+.payment-table th,
+.payment-table td {
+  padding: 14px 16px;
+  text-align: left;
+  border-bottom: 1px solid #e5e7eb;
+  word-wrap: break-word;
+  color: #000000;
+}
+
+.payment-table th {
+  background: #000000;
+  color: white;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: 0.85rem;
+}
+
+.payment-table tr:nth-child(even) {
+  background: #f8f9fa;
+}
+
+.payment-id {
+  font-weight: 700;
+  color: #000000;
+  font-family: 'Courier New', monospace;
+}
+
+.remarks {
+  color: #333333;
+  font-style: italic;
+  max-width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 0.85rem;
+}
+
+/* Clearance Status Section */
+.clearance-status-section {
+  margin-bottom: 40px;
+}
+
+.clearance-status-section h2 {
+  color: #000000;
+  margin-bottom: 25px;
+  font-size: 1.6rem;
+  font-weight: 800;
+  padding-bottom: 15px;
+  border-bottom: 3px solid #000000;
+  position: relative;
+}
+
+.clearance-status-section h2::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 100px;
+  height: 3px;
+  background: #000000;
+}
+
+.clearance-badge {
+  padding: 40px;
+  border-radius: 12px;
+  text-align: center;
+  margin: 30px 0;
+  border: 4px solid;
+}
+
+.clearance-badge.cleared {
+  background: #d1fae5;
+  border-color: #10b981;
+  color: #065f46;
+}
+
+.clearance-badge.pending {
+  background: #fef3c7;
+  border-color: #f59e0b;
+  color: #92400e;
+}
+
+.status-cleared h3,
+.status-pending h3 {
+  margin: 0 0 20px 0;
+  font-size: 2rem;
+  font-weight: 900;
+  color: inherit;
+}
+
+.status-cleared p,
+.status-pending p {
+  margin: 8px 0;
+  font-size: 1.1rem;
+  color: inherit;
+  font-weight: 500;
+}
+
+/* Report Footer */
+.report-footer {
+  margin-top: 50px;
+  padding-top: 30px;
+  border-top: 4px solid #000000;
+}
+
+.signature-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 50px;
+  margin-bottom: 30px;
+}
+
+.signature-box {
+  text-align: center;
+}
+
+.signature-box p {
+  margin: 0 0 60px 0;
+  font-weight: 700;
+  color: #000000;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.signature-line {
+  border-top: 2px solid #000000;
+  width: min(250px, 100%);
+  margin: 0 auto;
+}
+
+.footer-note {
+  text-align: center;
+  color: #333333;
+  font-size: 0.9rem;
+  font-style: italic;
+  font-weight: 500;
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+}
+
+/* No Data States */
+.no-challans {
+  text-align: center;
+  padding: 60px;
+  color: #333333;
+  background: #f8f9fa;
+  border-radius: 12px;
+  border: 2px dashed #d1d5db;
+  font-weight: 500;
+}
+
+.no-challan-row {
+  background-color: #fef3c7 !important;
+  color: #92400e;
+  font-style: italic;
+}
+
+/* Loading and Error States */
+.loading {
+  text-align: center;
+  padding: 80px;
+  color: #333333;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  border: 2px solid #e5e7eb;
+}
+
+.loading-spinner {
+  width: 60px;
+  height: 60px;
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #000000;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 30px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.error {
+  text-align: center;
+  padding: 60px;
+  color: #dc2626;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  margin: 20px 0;
+  border: 2px solid #fecaca;
+}
+
+.error h3 {
+  margin: 0 0 15px 0;
+  color: #dc2626;
+  font-size: 1.8rem;
+  font-weight: 800;
+}
+
+.error p {
+  margin: 0;
+  color: #333333;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+/* Print Styles */
+@media print {
+  @page {
+    margin: 0.5in;
+    size: letter;
+  }
+
+  body {
+    background: white !important;
+    color: black !important;
+    font-size: 11pt;
+  }
+
+  .student-fee-report {
+    background: white !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    max-width: none !important;
+    font-size: 11pt;
+  }
+
+  .university-header {
+    margin-bottom: 20px;
+    padding: 20px 0;
+  }
+
+  .report-actions,
+  .back-btn,
+  .search-section,
+  .students-list,
+  .no-print {
+    display: none !important;
+  }
+
+  .fee-clearance-report {
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    font-size: 11pt;
+    border: none;
+  }
+
+  .summary-cards-print {
+    break-inside: avoid;
+  }
+
+  .challan-table,
+  .payment-table,
+  .breakdown-table {
+    break-inside: avoid;
+    font-size: 9pt !important;
+    border: 1px solid #000000 !important;
+  }
+
+  .challan-table th,
+  .payment-table th,
+  .breakdown-table th {
+    background: #000000 !important;
+    color: white !important;
+    -webkit-print-color-adjust: exact;
+  }
+
+  .summary-card-print {
+    -webkit-print-color-adjust: exact;
+    color-adjust: exact;
+    break-inside: avoid;
+  }
+
+  .clearance-badge {
+    -webkit-print-color-adjust: exact;
+    color-adjust: exact;
+    break-inside: avoid;
+  }
+
+  .signature-section {
+    break-inside: avoid;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .student-fee-report {
+    padding: 15px;
+  }
+
+  .fee-clearance-report {
+    padding: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .student-fee-report {
+    padding: 10px;
+  }
+
+  .university-header {
+    margin-bottom: 30px;
+    padding: 20px 0;
+  }
+
+  .university-name {
+    font-size: 2rem;
+  }
+
+  .university-subtitle {
+    font-size: 1rem;
+  }
+
+  .report-actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 15px;
+    padding: 15px;
+  }
+
+  .action-buttons {
+    width: 100%;
+    justify-content: stretch;
+    gap: 10px;
+  }
+
+  .back-btn,
+  .print-btn,
+  .download-btn,
+  .refresh-btn {
+    flex: 1;
+    justify-content: center;
+    min-width: auto;
+    font-size: 0.9rem;
+    padding: 12px 16px;
+  }
+
+  .report-header {
+    padding: 20px;
+  }
+
+  .report-header h2 {
+    font-size: 1.8rem;
+  }
+
+  .report-header p {
+    font-size: 1rem;
+  }
+
+  .fee-clearance-report {
+    padding: 20px;
+    margin-bottom: 30px;
+  }
+
+  .report-header-print {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+  }
+
+  .report-meta {
+    text-align: left;
+    width: 100%;
+  }
+
+  .info-row {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .summary-cards-print {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .signature-section {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .challan-table,
+  .payment-table,
+  .breakdown-table {
+    font-size: 0.85rem;
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  .challan-table th,
+  .challan-table td,
+  .payment-table th,
+  .payment-table td,
+  .breakdown-table th,
+  .breakdown-table td {
+    padding: 12px 14px;
+    min-width: 100px;
+  }
+
+  .students-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .student-card {
+    flex-direction: row;
+    gap: 15px;
+    padding: 20px;
+  }
+
+  .search-section {
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+
+  .search-input {
+    padding: 14px 20px;
+    font-size: 0.95rem;
+  }
+
+  .clearance-badge {
+    padding: 30px;
+    margin: 20px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .student-fee-report {
+    padding: 8px;
+  }
+
+  .university-name {
+    font-size: 1.6rem;
+  }
+
+  .report-header h2 {
+    font-size: 1.5rem;
+  }
+
+  .college-info h1 {
+    font-size: 1.8rem;
+  }
+
+  .summary-card-print {
+    padding: 25px 20px;
+    min-height: 120px;
+  }
+
+  .summary-card-print p {
+    font-size: 1.8rem;
+  }
+
+  .summary-card-print h3 {
+    font-size: 1rem;
+    margin-bottom: 12px;
+  }
+
+  .action-buttons {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .back-btn,
+  .print-btn,
+  .download-btn,
+  .refresh-btn {
+    width: 100%;
+  }
+
+  .student-card {
+    flex-direction: column;
+    text-align: center;
+    gap: 12px;
+    padding: 16px;
+  }
+
+  .student-avatar {
+    width: 50px;
+    height: 50px;
+    font-size: 1.2rem;
+  }
+
+  .search-input {
+    font-size: 16px;
+  }
+
+  .challan-table,
+  .payment-table,
+  .breakdown-table {
+    font-size: 0.8rem;
+  }
+
+  .challan-table th,
+  .challan-table td,
+  .payment-table th,
+  .payment-table td,
+  .breakdown-table th,
+  .breakdown-table td {
+    padding: 10px 12px;
+    min-width: 90px;
+  }
+
+  .status-badge {
+    padding: 4px 8px;
+    font-size: 0.75rem;
+  }
+
+  .remarks {
+    max-width: 150px;
+  }
+}
+
+@media (max-width: 360px) {
+  .student-fee-report {
+    padding: 5px;
+  }
+
+  .fee-clearance-report {
+    padding: 15px;
+  }
+
+  .report-header-print {
+    gap: 15px;
+  }
+
+  .college-info h1 {
+    font-size: 1.5rem;
+  }
+
+  .college-name {
+    font-size: 1.1rem;
+  }
+
+  .student-info-section h2,
+  .fee-summary-section h2,
+  .challan-details-section h2,
+  .payment-history-section h2,
+  .clearance-status-section h2 {
+    font-size: 1.3rem;
+  }
+
+  .summary-card-print {
+    padding: 20px 15px;
+  }
+
+  .summary-card-print p {
+    font-size: 1.5rem;
+  }
+
+  .summary-card-print h3 {
+    font-size: 0.9rem;
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .student-card,
+  .back-btn,
+  .print-btn,
+  .download-btn,
+  .refresh-btn,
+  .search-input,
+  .summary-card-print {
+    transition: none;
+  }
+
+  .loading-spinner {
+    animation: none;
+  }
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+  .student-card {
+    border: 3px solid #000000;
+  }
+
+  .search-input {
+    border: 3px solid #000000;
+  }
+
+  .summary-card-print {
+    border: 3px solid #000000;
+  }
+
+  .challan-table,
+  .payment-table,
+  .breakdown-table {
+    border: 3px solid #000000;
+  }
+}
